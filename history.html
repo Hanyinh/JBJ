@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			document.getElementById("result").innerHTML = xhr.responseText;
+		}
+	}
+	xhr.open('get','history.php',true);
+	xhr.send(null);
+	
+}
+</script>
+<style type="text/css">
+body{
+	margin:0px;
+	padding:0px;
+}
+.div1{
+	width:1000px;
+	margin:auto;
+}
+.table1{
+	border-top:3px solid rgb(228,228,228);
+}
+.table1 th{
+	width:200px;
+	height:50px;
+}
+.table1 td{
+	width:250px;
+	height:50px;
+	text-align:center;
+	border-collapse:collapse;
+	border-top:1px solid rgb(228,228,228);	
+}
+.table1 .a1{
+	text-decoration:none;
+}
+</style>
+</head>
+<body>
+<br />
+<div class="div1" id="result"></div>
+</body>
+</html>

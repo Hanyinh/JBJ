@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>firstpage</title>
+<script type="text/javascript">
+window.onload = function() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			document.getElementById("div_2").innerHTML = xhr.responseText;
+		}
+	}
+	xhr.open('get','firstpage.php',true);
+	xhr.send(null);
+}
+</script>
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.div1{
+	height:50px;
+	width:130px;
+	position:fixed;
+	font-size:30px;
+	bottom:0px;
+	right:0px;
+}
+.div2{
+	width:1000px;
+	margin:auto;
+}
+.table1{
+	border-top:3px solid rgb(228,228,228);
+}
+.table1 th{
+	width:250px;
+	height:50px;
+}
+.table1 td{
+	width:250px;
+	height:50px;
+	text-align:center;
+	border-collapse:collapse;
+	border-top:1px solid rgb(228,228,228);	
+}
+.table1 .a1{
+	text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<a name="top"></a>
+<div class="div2" id="div_2">
+
+</div>
+<div class="div1" id="div_1">
+	<a style="color:#0F0;text-decoration:none;" href="#top">返回顶部</a>
+</div>
+</body>
+</html>

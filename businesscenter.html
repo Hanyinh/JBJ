@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//制作函数（ajax去获得分页信息
+function showpage(url) {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState==4) {
+			document.getElementById('result').innerHTML = xhr.responseText;
+		}
+	}
+	xhr.open('get',url,true);
+	xhr.send(null);
+
+	
+}
+window.onload = function() {
+	showpage('businesscenter.php');
+}
+function alterInfo(num) {
+	var value = document.getElementById(num).value;
+	var xhr1 = new XMLHttpRequest();
+	xhr1.onreadystatechange = function() {
+		if(xhr1.readyState==4) {
+			alert("修改成功");
+		}
+	}
+	xhr1.open('get','businesscenteralter.php?name='+num+'&value='+value,true);
+	xhr1.send(null);
+}
+
+
+
+</script>
+<style type="text/css">
+a{
+	text-decoration:none;
+	display:block;	
+}
+a:hover{
+	transform:scale(1.2,1.2);	/*缩放*/
+}
+.div0{
+	width:744px;
+	margin:auto;
+}
+.div2{
+	width:300px;
+	margin:auto;
+	float:left;	
+}
+.div1{
+	width:444px;
+	height:300px;
+	float:left;
+	background-image:url('./Images/bgimage.gif');
+	background-size:100% 100%;	
+}
+table{
+	width:300px;
+	margin:100px auto;
+}/*border-collapse:collapse;*/
+td:first-child{
+	width:50px;
+}
+td:last-child{
+	width:100px;
+}
+input{
+	border:0;
+}
+</style>
+</head>
+<body>
+<div class="div0">
+	<div class="div2" id='result'></div>
+	<div class="div1"></div>
+</div>
+</body>
+</html> 
