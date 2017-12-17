@@ -3,7 +3,7 @@ session_start();
 $value = $_GET['value'];
 $Link = mysqli_connect('localhost','root','123456') or die('数据库连接失败');
 $Link->query('use jbj') or die('数据库选择失败');
-$sql = "SELECT * FROM category_table WHERE categoryName LIKE '%{$value}%'";
+$sql = "SELECT * FROM category_table,company_table WHERE (category_table.categoryName LIKE '%{$value}%' or company_table.CompanyName LIKE '%{$value}%') AND Company_Id = Category_Id";
 $rs = $Link->query($sql);
 echo <<<eof
 <style type="text/css">
